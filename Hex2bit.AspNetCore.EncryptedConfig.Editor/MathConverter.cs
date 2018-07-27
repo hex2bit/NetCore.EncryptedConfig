@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Data;
 
+/// <summary>
+/// MathConverter pulled from here:
+/// https://rachel53461.wordpress.com/2011/08/20/the-math-converter/
+/// </summary>
 namespace Hex2bit.AspNetCore.EncryptedConfig.Editor
 {
     // Does a math equation on the bound value.
