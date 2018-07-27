@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hex2bit.AspNetCore.EncryptedConfig", "Hex2bit.AspNetCore.EncryptedConfig\Hex2bit.AspNetCore.EncryptedConfig.csproj", "{2B04798C-1499-458D-8923-9C537F2092BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hex2bit.AspNetCore.EncryptedConfig.Editor", "Hex2bit.AspNetCore.EncryptedConfig.Editor\Hex2bit.AspNetCore.EncryptedConfig.Editor.csproj", "{CCFBE2DA-A41A-4296-A18A-AE8427C6F380}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2B04798C-1499-458D-8923-9C537F2092BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B04798C-1499-458D-8923-9C537F2092BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B04798C-1499-458D-8923-9C537F2092BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B04798C-1499-458D-8923-9C537F2092BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCFBE2DA-A41A-4296-A18A-AE8427C6F380}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCFBE2DA-A41A-4296-A18A-AE8427C6F380}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCFBE2DA-A41A-4296-A18A-AE8427C6F380}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCFBE2DA-A41A-4296-A18A-AE8427C6F380}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1233C855-03CC-4BF0-A139-E2BAC73BD897}
+	EndGlobalSection
+EndGlobal
