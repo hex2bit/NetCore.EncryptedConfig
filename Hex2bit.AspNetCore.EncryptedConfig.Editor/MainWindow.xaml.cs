@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -22,6 +24,8 @@ namespace Hex2bit.AspNetCore.EncryptedConfig.Editor
     /// </summary>
     public partial class MainWindow : Window
     {
+        private string OriginalFileText = "";
+
         public MainWindow()
         {
             InitializeComponent();
@@ -35,11 +39,19 @@ namespace Hex2bit.AspNetCore.EncryptedConfig.Editor
 
             RefreshCertList();
             certificateName.SelectedValue = certificateName.Items.Cast<string>().Where(x => x.ToLower().StartsWith(App.Thumbprint + " (")).FirstOrDefault();
+
+            // fill in file name if provided as output
+            if (!string.IsNullOrWhiteSpace(App.OutputFile))
+            {
+                FileNameTextBox.Text = new FileInfo(App.OutputFile).FullName;
+                OpenFile();
+            }
         }
 
         private string[] GetCertificates()
         {
             List<string> certList = new List<string>();
+            string displayName;
 
             using (var store = new X509Store((StoreName)Enum.Parse(typeof(StoreName), storeName.SelectedValue.ToString()),
                 (StoreLocation)Enum.Parse(typeof(StoreLocation), storeLocation.SelectedValue.ToString())))
@@ -47,7 +59,12 @@ namespace Hex2bit.AspNetCore.EncryptedConfig.Editor
                 store.Open(OpenFlags.ReadOnly);
                 foreach (var cert in store.Certificates)
                 {
-                    certList.Add(cert.Thumbprint + " (" + (!string.IsNullOrWhiteSpace(cert.FriendlyName) ? cert.FriendlyName : cert.Subject) + ")");
+                    displayName = !string.IsNullOrWhiteSpace(cert.FriendlyName) ? cert.FriendlyName : cert.Subject;
+                    if (displayName.Length > 80)
+                    {
+                        displayName = displayName.Substring(0, 80) + "...";
+                    }
+                    certList.Add(cert.Thumbprint + " (" + displayName + ")");
                 }
             }
 
@@ -90,6 +107,7 @@ namespace Hex2bit.AspNetCore.EncryptedConfig.Editor
         private void certificateName_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             certificateHint.Visibility = Visibility.Hidden;
+            OpenFile();
         }
 
         private void storeLocation_Initialized(object sender, EventArgs e)
@@ -107,6 +125,123 @@ namespace Hex2bit.AspNetCore.EncryptedConfig.Editor
             foreach (string name in Enum.GetNames(typeof(StoreName)))
             {
                 storeName.Items.Add(name);
+            }
+        }
+
+        private void FileOpenButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult messageBoxResult = MessageBoxResult.Yes;
+
+            if (FileContent.Text != OriginalFileText)
+            {
+                messageBoxResult = System.Windows.MessageBox.Show("Are you sure you want to open a different file and lose unsaved changes?  If not, click No and save your changes first", "Lose Changes?", System.Windows.MessageBoxButton.YesNo);
+            }
+
+            if (messageBoxResult == MessageBoxResult.Yes)
+            {
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                if (openFileDialog.ShowDialog() == true)
+                {
+                    FileNameTextBox.Text = openFileDialog.FileName;
+                    OpenFile();
+                }
+            }
+        }
+
+        private void OpenFile()
+        {
+            // try opening file
+            if (certificateName.SelectedValue == null || certificateName.SelectedValue.ToString() == "")
+            {
+                FileContent.Text = "Cannot open file until certificate is selected";
+                FileContent.IsEnabled = false;
+                OriginalFileText = FileContent.Text;
+            }
+            else if (File.Exists(FileNameTextBox.Text))
+            {
+                byte[] fileBytes = File.ReadAllBytes(FileNameTextBox.Text);
+                try
+                {
+                    using (EncryptionService encryptionService = new EncryptionService(
+                        (certificateName.SelectedValue ?? "").ToString().Split(new string[] { " (" }, StringSplitOptions.None)[0],
+                        (StoreLocation)Enum.Parse(typeof(StoreLocation), storeLocation.SelectedValue.ToString()),
+                        (StoreName)Enum.Parse(typeof(StoreName), storeName.SelectedValue.ToString())))
+                    {
+                        FileContent.IsEnabled = true;
+                        FileContent.Text = encryptionService.Decrypt(fileBytes);
+                        OriginalFileText = FileContent.Text;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    FileContent.Text = "Failed to decrypt file with selected certificate";
+                    FileContent.IsEnabled = false;
+                    OriginalFileText = FileContent.Text;
+                }
+            }
+
+            UpdateSaveButtons();
+        }
+
+        // enables/disbale save buttons based on file exists and cert being selected.  Returns true of the file exists
+        private void UpdateSaveButtons()
+        {
+            // enable Save As button if certificate is selected and file content area is enabled (not showing an error message)
+            SaveAsButton.IsEnabled = certificateName.SelectedValue != null && certificateName.SelectedValue.ToString() != "" && FileContent.IsEnabled;
+
+            // enable Save button if the above is true and the file selected exists
+            SaveButton.IsEnabled = certificateName.SelectedValue != null && certificateName.SelectedValue.ToString() != "" && FileContent.IsEnabled && File.Exists(FileNameTextBox.Text);
+        }
+
+        private void NewButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult messageBoxResult = MessageBoxResult.Yes;
+
+            if (FileContent.Text != OriginalFileText)
+            {
+                messageBoxResult = System.Windows.MessageBox.Show("Are you sure you want to create a new file and lose unsaved changes?  If not, click No and save your changes first", "Lose Changes?", System.Windows.MessageBoxButton.YesNo);
+            }
+
+            if (messageBoxResult == MessageBoxResult.Yes)
+            {
+                FileNameTextBox.Text = "";
+                FileContent.Text = "";
+                OriginalFileText = FileContent.Text;
+                FileContent.IsEnabled = true;
+                UpdateSaveButtons();
+            }
+        }
+
+        private void SaveAsButton_Click(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                using(EncryptionService encryptionService = new EncryptionService(
+                    (certificateName.SelectedValue ?? "").ToString().Split(new string[] { " (" }, StringSplitOptions.None)[0],
+                    (StoreLocation)Enum.Parse(typeof(StoreLocation), storeLocation.SelectedValue.ToString()),
+                    (StoreName)Enum.Parse(typeof(StoreName), storeName.SelectedValue.ToString())))
+                {
+                    FileNameTextBox.Text = saveFileDialog.FileName;
+                    File.WriteAllBytes(saveFileDialog.FileName, encryptionService.Encrypt(FileContent.Text));
+                    OriginalFileText = FileContent.Text;
+                }
+            }  
+        }
+
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            // make sure file exists before proceeding
+            if (File.Exists(FileNameTextBox.Text))
+            {
+                using (EncryptionService encryptionService = new EncryptionService(
+                    (certificateName.SelectedValue ?? "").ToString().Split(new string[] { " (" }, StringSplitOptions.None)[0],
+                    (StoreLocation)Enum.Parse(typeof(StoreLocation), storeLocation.SelectedValue.ToString()),
+                    (StoreName)Enum.Parse(typeof(StoreName), storeName.SelectedValue.ToString())))
+                {
+                    File.WriteAllBytes(FileNameTextBox.Text, encryptionService.Encrypt(FileContent.Text));
+                    OriginalFileText = FileContent.Text;
+                }
             }
         }
     }

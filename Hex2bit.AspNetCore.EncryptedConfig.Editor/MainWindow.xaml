@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Hex2bit.AspNetCore.EncryptedConfig.Editor"
         xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="Hex2bit.AspNetCore.EncryptedConfig.Editor.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Initialized="Window_Initialized">
+        Title="MainWindow" Height="600" Width="1000" Initialized="Window_Initialized">
     <Window.Resources>
         <local:MathConverter x:Key="MathConverter" />
     </Window.Resources>
@@ -15,19 +15,30 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto" />
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Label Grid.Row="0" Grid.Column="0" x:Name="storeLocationLabel" Content="Store Location:" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <ComboBox Grid.Row="0" Grid.Column="1" x:Name="storeLocation" HorizontalAlignment="Left" VerticalAlignment="Center" MinWidth="150" SelectionChanged="storeLocation_SelectionChanged" Initialized="storeLocation_Initialized"/>
-        <Label Grid.Row="1" Grid.Column="0" x:Name="storeNameLabel" Content="Store Name:" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <ComboBox Grid.Row="1" Grid.Column="1" x:Name="storeName" HorizontalAlignment="Left" VerticalAlignment="Center" MinWidth="150" SelectionChanged="storeName_SelectionChanged" Initialized="storeName_Initialized"/>
-        <Label Grid.Row="2" Grid.Column="0" x:Name="certificateNameLabel" Content="Certificate:" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <ComboBox Grid.Row="2" Grid.Column="1" x:Name="certificateName" HorizontalAlignment="Left" VerticalAlignment="Center" 
+        <Label Grid.Row="0" Grid.Column="0" x:Name="storeLocationLabel" Content="Store Location:" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,1"/>
+        <ComboBox Grid.Row="0" Grid.Column="1" x:Name="storeLocation" HorizontalAlignment="Left" VerticalAlignment="Center" MinWidth="150" SelectionChanged="storeLocation_SelectionChanged" Initialized="storeLocation_Initialized" Margin="0,2,0,3"/>
+        <Label Grid.Row="1" Grid.Column="0" x:Name="storeNameLabel" Content="Store Name:" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,1,0,0"/>
+        <ComboBox Grid.Row="1" Grid.Column="1" x:Name="storeName" HorizontalAlignment="Left" VerticalAlignment="Center" MinWidth="150" SelectionChanged="storeName_SelectionChanged" Initialized="storeName_Initialized" Margin="0,3,0,2"/>
+        <Label Grid.Row="2" Grid.Column="0" x:Name="certificateNameLabel" Content="Certificate:" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,1"/>
+        <ComboBox Grid.Row="2" Grid.Column="1" x:Name="certificateName" HorizontalAlignment="Left" VerticalAlignment="Center"
                   MinWidth="{Binding ElementName=certificateHint, Path=ActualWidth, Converter={StaticResource MathConverter}, ConverterParameter=@VALUE+25}" 
-                  SelectionChanged="certificateName_SelectionChanged" />
-        <TextBlock Grid.Row="2" Grid.Column="1" Name="certificateHint" Margin="5 0 0 0" HorizontalAlignment="Left" VerticalAlignment="Center" IsHitTestVisible="False" Foreground="#B2000000"/>
+                  SelectionChanged="certificateName_SelectionChanged" Margin="0,2,0,3" />
+        <TextBlock Grid.Row="2" Grid.Column="1" Name="certificateHint" Margin="5,6,0,5" HorizontalAlignment="Left" VerticalAlignment="Center" IsHitTestVisible="False" Foreground="#B2000000"/>
+        <Label Grid.Row="3" Grid.Column="0" x:Name="fileNameLabel" Content="File" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,1,0,0"/>
+        <WrapPanel Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,3,0,2">
+            <Button HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="NewButton" Content="New" Margin="0,0,5,0" Padding="5,2" Click="NewButton_Click" />
+            <Button HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="OpenButton" Content="Open" Margin="0,0,5,0" Padding="5,2" Click="FileOpenButton_Click" />
+            <Button HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="SaveButton" Content="Save" Margin="0,0,5,0" Padding="5,2" Click="SaveButton_Click" />
+            <Button HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="SaveAsButton" Content="Save As" Margin="0,0,5,0" Padding="5,2" Click="SaveAsButton_Click" />
+            <TextBox x:Name="FileNameTextBox" HorizontalAlignment="Left" TextWrapping="NoWrap" VerticalAlignment="Center" MinWidth="250" MaxWidth="800" Margin="0" Padding="0,2" VerticalContentAlignment="Center" IsEnabled="False" />
+        </WrapPanel>
+        <avalonEdit:TextEditor xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Name="FileContent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="2" FontFamily="Consolas" SyntaxHighlighting="JavaScript" FontSize="10pt" BorderThickness="1" BorderBrush="#FFABADB3" />
     </Grid>
 </Window>
