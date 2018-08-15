@@ -10,7 +10,7 @@ using System.Windows;
 [assembly: AssemblyTitle("Hex2bit.AspNetCore.EncryptedConfig.Editor")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Hex2bit")]
 [assembly: AssemblyProduct("Hex2bit.AspNetCore.EncryptedConfig.Editor")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]

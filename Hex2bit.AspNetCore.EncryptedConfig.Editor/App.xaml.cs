@@ -31,10 +31,6 @@ namespace Hex2bit.AspNetCore.EncryptedConfig.Editor
 
         private static void ParseInputs(StartupEventArgs e)
         {
-            // set defaults
-            StoreLocation = "localmachine";
-            StoreName = "my";
-
             // look for command line arguments
             for (int i = 0; i < e.Args.Length; ++i)
             {
