@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace Hex2bit.AspNetCore.EncryptedConfig.Editor
 {
-    public class Settings
+    public class SettingsManager
     {
         // list of successfully opened files and options used
         List<EncryptedFileDetails> KnownFiles = new List<EncryptedFileDetails>();
 
-        public Settings()
+        public SettingsManager()
         {
             Properties.Settings.Default.Upgrade();
             string knownFilesJson = Properties.Settings.Default.KnownFiles;

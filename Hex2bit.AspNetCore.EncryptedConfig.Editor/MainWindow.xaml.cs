@@ -26,7 +26,8 @@ namespace Hex2bit.AspNetCore.EncryptedConfig.Editor
     public partial class MainWindow : Window
     {
         private string OriginalFileText = "";
-        private Settings settings = new Settings();
+        private SettingsManager settings = new SettingsManager();
+        private SecurityManager securityManager = new SecurityManager();
 
         public MainWindow()
         {
@@ -88,43 +89,7 @@ namespace Hex2bit.AspNetCore.EncryptedConfig.Editor
             }
         }
 
-        private string[] GetCertificates()
-        {
-            List<string> certList = new List<string>();
-            string displayName;
-
-            using (var store = new X509Store((StoreName)Enum.Parse(typeof(StoreName), storeName.SelectedValue.ToString()),
-                (StoreLocation)Enum.Parse(typeof(StoreLocation), storeLocation.SelectedValue.ToString())))
-            {
-                store.Open(OpenFlags.ReadOnly);
-                foreach (var cert in store.Certificates)
-                {
-                    // try accessing private key
-                    try
-                    {
-                        // verify access to private key for decryption
-                        if (cert.HasPrivateKey)
-                        {
-                            // verify encryption/decryption works
-                            using (EncryptionService encryptionService = GetNewEncryptionService(cert.Thumbprint))
-                            {
-                                encryptionService.Decrypt(encryptionService.Encrypt("test"));
-                            }
-
-                            displayName = !string.IsNullOrWhiteSpace(cert.FriendlyName) ? cert.FriendlyName : cert.Subject;
-                            if (displayName.Length > 80)
-                            {
-                                displayName = displayName.Substring(0, 80) + "...";
-                            }
-                            certList.Add(cert.Thumbprint + " (" + displayName + ")");
-                        }
-                    }
-                    catch (Exception) { }
-                }
-            }
-
-            return certList.ToArray();
-        }
+        
 
         private void RefreshCertList()
         {
@@ -136,7 +101,7 @@ namespace Hex2bit.AspNetCore.EncryptedConfig.Editor
                 // update list
                 certificateName.Items.Clear();
                 certificateName.SelectedValue = "";
-                foreach (string cert in GetCertificates())
+                foreach (string cert in securityManager.GetCertificates((string)storeName.SelectedValue, (string)storeLocation.SelectedValue))
                 {
                     certificateName.Items.Add(cert);
                 }
@@ -202,6 +167,12 @@ namespace Hex2bit.AspNetCore.EncryptedConfig.Editor
             if (messageBoxResult == MessageBoxResult.Yes)
             {
                 OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.CheckFileExists = true;
+                openFileDialog.CheckPathExists = true;
+                openFileDialog.Multiselect = false;
+                openFileDialog.Filter = "Encrypted JSON (*.ejson)|*.ejson|JSON (*.json)|*.json|All files (*.*)|*.*";
+                openFileDialog.FilterIndex = 1;
+
                 if (openFileDialog.ShowDialog() == true)
                 {
                     FileNameTextBox.Text = openFileDialog.FileName;
@@ -216,9 +187,9 @@ namespace Hex2bit.AspNetCore.EncryptedConfig.Editor
             // try opening file
             if (certificateName.SelectedValue == null || certificateName.SelectedValue.ToString() == "")
             {
-                FileContent.Text = "Cannot open file until certificate is selected";
+                OriginalFileText = "Cannot open file until certificate is selected";
+                FileContent.Text = OriginalFileText;
                 FileContent.IsEnabled = false;
-                OriginalFileText = FileContent.Text;
             }
             else if (File.Exists(FileNameTextBox.Text))
             {
@@ -227,18 +198,18 @@ namespace Hex2bit.AspNetCore.EncryptedConfig.Editor
                 {
                     using (EncryptionService encryptionService = GetNewEncryptionService())
                     {
+                        OriginalFileText = encryptionService.Decrypt(fileBytes);
+                        FileContent.Text = OriginalFileText;
                         FileContent.IsEnabled = true;
-                        FileContent.Text = encryptionService.Decrypt(fileBytes);
-                        OriginalFileText = FileContent.Text;
                         settings.UpdateSettings(FileNameTextBox.Text, storeLocation.SelectedValue.ToString().ToLower(), storeName.SelectedValue.ToString().ToLower(),
                             (certificateName.SelectedValue ?? "").ToString().Split(new string[] { " (" }, StringSplitOptions.None)[0]);
                     }
                 }
                 catch (Exception ex)
                 {
-                    FileContent.Text = "Failed to decrypt file with selected certificate, with error: " + ex.Message;
+                    OriginalFileText = "Failed to decrypt file with selected certificate, with error: " + ex.Message;
+                    FileContent.Text = OriginalFileText;
                     FileContent.IsEnabled = false;
-                    OriginalFileText = FileContent.Text;
                 }
             }
 
@@ -267,8 +238,8 @@ namespace Hex2bit.AspNetCore.EncryptedConfig.Editor
             if (messageBoxResult == MessageBoxResult.Yes)
             {
                 FileNameTextBox.Text = "";
-                FileContent.Text = "";
-                OriginalFileText = FileContent.Text;
+                OriginalFileText = "";
+                FileContent.Text = OriginalFileText;
                 FileContent.IsEnabled = true;
                 UpdateSaveButtons();
             }
@@ -284,6 +255,7 @@ namespace Hex2bit.AspNetCore.EncryptedConfig.Editor
                     FileNameTextBox.Text = saveFileDialog.FileName;
                     File.WriteAllBytes(saveFileDialog.FileName, encryptionService.Encrypt(FileContent.Text));
                     OriginalFileText = FileContent.Text;
+                    FileContent.Background = Brushes.White;
                     settings.UpdateSettings(FileNameTextBox.Text, storeLocation.SelectedValue.ToString().ToLower(), storeName.SelectedValue.ToString().ToLower(),
                             (certificateName.SelectedValue ?? "").ToString().Split(new string[] { " (" }, StringSplitOptions.None)[0]);
                 }
@@ -299,18 +271,31 @@ namespace Hex2bit.AspNetCore.EncryptedConfig.Editor
                 {
                     File.WriteAllBytes(FileNameTextBox.Text, encryptionService.Encrypt(FileContent.Text));
                     OriginalFileText = FileContent.Text;
+                    FileContent.Background = Brushes.White;
                     settings.UpdateSettings(FileNameTextBox.Text, storeLocation.SelectedValue.ToString().ToLower(), storeName.SelectedValue.ToString().ToLower(),
                             (certificateName.SelectedValue ?? "").ToString().Split(new string[] { " (" }, StringSplitOptions.None)[0]);
                 }
             }
         }
 
-        private EncryptionService GetNewEncryptionService(string thumbprint = null)
+        private EncryptionService GetNewEncryptionService()
         {
-            return new EncryptionService(thumbprint ??
-                (certificateName.SelectedValue ?? "").ToString().Split(new string[] { " (" }, StringSplitOptions.None)[0],
-                (StoreLocation)Enum.Parse(typeof(StoreLocation), storeLocation.SelectedValue.ToString()),
-                (StoreName)Enum.Parse(typeof(StoreName), storeName.SelectedValue.ToString()));
+            return securityManager.GetNewEncryptionService(
+                (string)storeName.SelectedValue,
+                (string)storeLocation.SelectedValue, 
+                (certificateName.SelectedValue ?? "").ToString().Split(new string[] { " (" }, StringSplitOptions.None)[0]);
+        }
+
+        private void FileContent_TextChanged(object sender, EventArgs e)
+        {
+            if (OriginalFileText != FileContent.Text)
+            {
+                FileContent.Background = Brushes.LightGoldenrodYellow;
+            }
+            else
+            {
+                FileContent.Background = Brushes.White;
+            }
         }
     }
 }

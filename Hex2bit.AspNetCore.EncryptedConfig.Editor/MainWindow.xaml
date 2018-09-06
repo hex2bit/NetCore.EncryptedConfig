@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Hex2bit.AspNetCore.EncryptedConfig.Editor"
         xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="Hex2bit.AspNetCore.EncryptedConfig.Editor.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="1000" Initialized="Window_Initialized">
+        Title="MainWindow" Height="700" Width="1000" Initialized="Window_Initialized">
     <Window.Resources>
         <local:MathConverter x:Key="MathConverter" />
     </Window.Resources>
@@ -39,6 +39,6 @@
             <Button HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="SaveAsButton" Content="Save As" Margin="0,0,5,0" Padding="5,2" Click="SaveAsButton_Click" />
             <TextBox x:Name="FileNameTextBox" HorizontalAlignment="Left" TextWrapping="NoWrap" VerticalAlignment="Center" MinWidth="250" MaxWidth="800" Margin="0" Padding="0,2" VerticalContentAlignment="Center" IsEnabled="False" />
         </WrapPanel>
-        <avalonEdit:TextEditor xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Name="FileContent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="2" FontFamily="Consolas" SyntaxHighlighting="JavaScript" FontSize="10pt" BorderThickness="1" BorderBrush="#FFABADB3" />
+        <avalonEdit:TextEditor xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Name="FileContent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="2" FontFamily="Consolas" SyntaxHighlighting="JavaScript" FontSize="10pt" BorderThickness="1" BorderBrush="#FFABADB3" TextChanged="FileContent_TextChanged" />
     </Grid>
 </Window>

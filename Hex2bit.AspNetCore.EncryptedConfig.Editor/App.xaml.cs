@@ -31,38 +31,50 @@ namespace Hex2bit.AspNetCore.EncryptedConfig.Editor
 
         private static void ParseInputs(StartupEventArgs e)
         {
-            // look for command line arguments
-            for (int i = 0; i < e.Args.Length; ++i)
+            // if run from a file association, will only have one paramter that's a file path
+            if (AppDomain.CurrentDomain.SetupInformation.ActivationArguments != null
+                && AppDomain.CurrentDomain.SetupInformation.ActivationArguments.ActivationData != null)
             {
-                if (e.Args[i].ToLower() == "-p")
+                if (new FileInfo(AppDomain.CurrentDomain.SetupInformation.ActivationArguments.ActivationData[0]).Exists)
                 {
-                    Piped = true;
+                    OutputFile = AppDomain.CurrentDomain.SetupInformation.ActivationArguments.ActivationData[0].ToLower();
                 }
-                else if (e.Args.Length > i + 1)
+            }
+            else
+            {
+                // look for command line arguments
+                for (int i = 0; i < e.Args.Length; ++i)
                 {
-                    if (e.Args[i].ToLower() == "-t")
+                    if (e.Args[i].ToLower() == "-p")
                     {
-                        Thumbprint = e.Args[++i].ToLower();
+                        Piped = true;
                     }
-                    else if (e.Args[i].ToLower() == "-n")
+                    else if (e.Args.Length > i + 1)
                     {
-                        StoreName = e.Args[++i].ToLower();
+                        if (e.Args[i].ToLower() == "-t")
+                        {
+                            Thumbprint = e.Args[++i].ToLower();
+                        }
+                        else if (e.Args[i].ToLower() == "-n")
+                        {
+                            StoreName = e.Args[++i].ToLower();
+                        }
+                        else if (e.Args[i].ToLower() == "-l")
+                        {
+                            StoreLocation = e.Args[++i].ToLower();
+                        }
+                        else if (e.Args[i].ToLower() == "-o")
+                        {
+                            OutputFile = e.Args[++i].ToLower();
+                        }
+                        else if (e.Args[i].ToLower() == "-i")
+                        {
+                            InputFile = e.Args[++i].ToLower();
+                        }
+                        // else unknown parameter
                     }
-                    else if (e.Args[i].ToLower() == "-l")
-                    {
-                        StoreLocation = e.Args[++i].ToLower();
-                    }
-                    else if (e.Args[i].ToLower() == "-o")
-                    {
-                        OutputFile = e.Args[++i].ToLower();
-                    }
-                    else if (e.Args[i].ToLower() == "-i")
-                    {
-                        InputFile = e.Args[++i].ToLower();
-                    }
-                    // else unknown parameter
+                    // else no more parameters to process
                 }
-                // else no more parameters to process
             }
         }
 
