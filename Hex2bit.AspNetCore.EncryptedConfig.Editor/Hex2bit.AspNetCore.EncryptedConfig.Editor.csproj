@@ -24,9 +24,14 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>7</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <UseApplicationTrust>false</UseApplicationTrust>
+    <SupportUrl>https://github.com/hex2bit/AspNetCore.EncryptedConfig/</SupportUrl>
+    <ErrorReportUrl>https://github.com/hex2bit/AspNetCore.EncryptedConfig/</ErrorReportUrl>
+    <ProductName>EncryptedConfigEditor</ProductName>
+    <PublisherName>Hex2Bit</PublisherName>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <UseApplicationTrust>true</UseApplicationTrust>
+    <ExcludeDeploymentUrl>true</ExcludeDeploymentUrl>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -61,6 +66,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ejson.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ICSharpCode.AvalonEdit, Version=5.0.3.0, Culture=neutral, PublicKeyToken=9cc39be672370310, processorArchitecture=MSIL">
@@ -156,18 +164,20 @@
     <FileAssociation Include=".ejs">
       <Visible>False</Visible>
       <Description>Encrypted JavaScript File</Description>
-      <Progid>29748bdb-d20c-4861-9f6f-87e1815ee385</Progid>
-      <DefaultIcon>json.ico</DefaultIcon>
+      <Progid>Hex2bitEncryptedConfigEditor.Ejson.1</Progid>
+      <DefaultIcon>ejson.ico</DefaultIcon>
     </FileAssociation>
     <FileAssociation Include=".ejson">
       <Visible>False</Visible>
       <Description>Encrypted JSON File</Description>
-      <Progid>e7ddf9f7-19a0-4f73-a784-d991987eaa0a</Progid>
-      <DefaultIcon>json.ico</DefaultIcon>
+      <Progid>Hex2bitEncryptedConfigEditor.Ejson.1</Progid>
+      <DefaultIcon>ejson.ico</DefaultIcon>
     </FileAssociation>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="json.ico" />
+    <Resource Include="ejson.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
