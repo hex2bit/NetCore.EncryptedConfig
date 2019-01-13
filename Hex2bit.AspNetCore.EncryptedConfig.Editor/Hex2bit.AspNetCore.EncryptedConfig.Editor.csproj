@@ -23,10 +23,10 @@
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
-    <MapFileExtensions>true</MapFileExtensions>
+    <MapFileExtensions>false</MapFileExtensions>
     <SupportUrl>https://github.com/hex2bit/AspNetCore.EncryptedConfig/</SupportUrl>
     <ErrorReportUrl>https://github.com/hex2bit/AspNetCore.EncryptedConfig/</ErrorReportUrl>
-    <ProductName>EncryptedConfigEditor</ProductName>
+    <ProductName>.NET Encrypted Config Editor</ProductName>
     <PublisherName>Hex2Bit</PublisherName>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.0</ApplicationVersion>

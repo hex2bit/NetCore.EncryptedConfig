@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Hex2bit.AspNetCore.EncryptedConfig.Editor"
         xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="Hex2bit.AspNetCore.EncryptedConfig.Editor.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="700" Width="1000" Initialized="Window_Initialized">
+        Title="Hex2Bit - .NET Encrypted Config Editor (v0.9)" Height="700" Width="1000" Initialized="Window_Initialized" Closing="Window_Closing">
     <Window.Resources>
         <local:MathConverter x:Key="MathConverter" />
     </Window.Resources>

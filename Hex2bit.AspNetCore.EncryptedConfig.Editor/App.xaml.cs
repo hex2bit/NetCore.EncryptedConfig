@@ -31,7 +31,7 @@ namespace Hex2bit.AspNetCore.EncryptedConfig.Editor
 
         private static void ParseInputs(StartupEventArgs e)
         {
-            // if run from a file association, will only have one paramter that's a file path
+            // if run from a ClickOnce published app
             if (AppDomain.CurrentDomain.SetupInformation.ActivationArguments != null
                 && AppDomain.CurrentDomain.SetupInformation.ActivationArguments.ActivationData != null)
             {
@@ -39,6 +39,11 @@ namespace Hex2bit.AspNetCore.EncryptedConfig.Editor
                 {
                     OutputFile = AppDomain.CurrentDomain.SetupInformation.ActivationArguments.ActivationData[0].ToLower();
                 }
+            }
+            // if run from traditional file association or called with just a single parameter (assumed to be the file to open)
+            else if (e.Args.Length == 1)
+            {
+                OutputFile = e.Args[0].ToLower();
             }
             else
             {

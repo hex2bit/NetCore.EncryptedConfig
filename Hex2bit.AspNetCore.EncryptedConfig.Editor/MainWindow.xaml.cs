@@ -297,5 +297,17 @@ namespace Hex2bit.AspNetCore.EncryptedConfig.Editor
                 FileContent.Background = Brushes.White;
             }
         }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            // check for change and confirm exit of app
+            if (OriginalFileText != FileContent.Text)
+            {
+                if (MessageBox.Show("You have unsaved changes, are you sure you want to exit and lose your changes?", "Confirm Close", MessageBoxButton.YesNo) == MessageBoxResult.No)
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
     }
 }

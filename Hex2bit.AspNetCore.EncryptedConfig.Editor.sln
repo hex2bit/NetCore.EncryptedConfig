@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hex2bit.AspNetCore.Encrypte
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hex2bit.AspNetCore.EncryptedConfig", "Hex2bit.AspNetCore.EncryptedConfig\Hex2bit.AspNetCore.EncryptedConfig.csproj", "{2FD48165-4F2E-41C5-9E64-CE9649185A31}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{B26C50F9-9B01-47DF-BB08-7F3186F170D3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,11 +23,17 @@ Global
 		{2FD48165-4F2E-41C5-9E64-CE9649185A31}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FD48165-4F2E-41C5-9E64-CE9649185A31}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2FD48165-4F2E-41C5-9E64-CE9649185A31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B26C50F9-9B01-47DF-BB08-7F3186F170D3}.Debug|Any CPU.ActiveCfg = Debug
+		{B26C50F9-9B01-47DF-BB08-7F3186F170D3}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1233C855-03CC-4BF0-A139-E2BAC73BD897}
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 EndGlobal
