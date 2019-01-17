@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Hex2bit.AspNetCore.EncryptedConfig.Editor.Properties {
+namespace Hex2bit.NetCore.EncryptedConfig.Editor.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

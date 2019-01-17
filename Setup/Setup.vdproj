@@ -238,7 +238,7 @@
         "Entry"
         {
         "MsmKey" = "8:_23A318D6DEFBD8833E61C67F861F9015"
-        "OwnerKey" = "8:_52925EF11947FE89DB120273B3E4D42A"
+        "OwnerKey" = "8:_AE7C763AAC0C75E95D5FC37F91D68AB0"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -843,6 +843,18 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_3C6204A64789F99C70AF60D2704F652F"
+        "OwnerKey" = "8:_AE7C763AAC0C75E95D5FC37F91D68AB0"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_3C6204A64789F99C70AF60D2704F652F"
+        "OwnerKey" = "8:_09B759EED5B047AE9D8D5DDB6D3A9EEF"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_3E7CA903F799937183C3E9FD3664293F"
         "OwnerKey" = "8:_715FCC05145F459516FC88333455825D"
         "MsmSig" = "8:_UNDEFINED"
@@ -910,12 +922,6 @@
         "Entry"
         {
         "MsmKey" = "8:_526EB7D7E9E3F9C54EA3C0949A58FD92"
-        "OwnerKey" = "8:_09B759EED5B047AE9D8D5DDB6D3A9EEF"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_52925EF11947FE89DB120273B3E4D42A"
         "OwnerKey" = "8:_09B759EED5B047AE9D8D5DDB6D3A9EEF"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1131,18 +1137,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_92E50A42DA2D07B7D39396B97C86C164"
-        "OwnerKey" = "8:_52925EF11947FE89DB120273B3E4D42A"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_92E50A42DA2D07B7D39396B97C86C164"
-        "OwnerKey" = "8:_09B759EED5B047AE9D8D5DDB6D3A9EEF"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_93CCDF0B317D1E312E5C6674FC3B32F2"
         "OwnerKey" = "8:_715FCC05145F459516FC88333455825D"
         "MsmSig" = "8:_UNDEFINED"
@@ -1240,6 +1234,12 @@
         "Entry"
         {
         "MsmKey" = "8:_AC20167FE9999C642ABDFA0FBC041BE8"
+        "OwnerKey" = "8:_09B759EED5B047AE9D8D5DDB6D3A9EEF"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_AE7C763AAC0C75E95D5FC37F91D68AB0"
         "OwnerKey" = "8:_09B759EED5B047AE9D8D5DDB6D3A9EEF"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1395,12 +1395,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_D772D39792EB34259A16A9191D491C7F"
-        "OwnerKey" = "8:_09B759EED5B047AE9D8D5DDB6D3A9EEF"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_D89A1177D86CB3A83A8FB0B3B3C3D679"
         "OwnerKey" = "8:_09B759EED5B047AE9D8D5DDB6D3A9EEF"
         "MsmSig" = "8:_UNDEFINED"
@@ -1414,6 +1408,12 @@
         "Entry"
         {
         "MsmKey" = "8:_DC4A3440167A865BFFACE0225E317F35"
+        "OwnerKey" = "8:_09B759EED5B047AE9D8D5DDB6D3A9EEF"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DD5B9EF2B87A9B9226D7B8FCE64893C8"
         "OwnerKey" = "8:_09B759EED5B047AE9D8D5DDB6D3A9EEF"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1666,7 +1666,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_D772D39792EB34259A16A9191D491C7F"
+        "OwnerKey" = "8:_DD5B9EF2B87A9B9226D7B8FCE64893C8"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -1768,7 +1768,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_92E50A42DA2D07B7D39396B97C86C164"
+        "OwnerKey" = "8:_3C6204A64789F99C70AF60D2704F652F"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -1796,6 +1796,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
             }
         }
         "Release"
@@ -2912,6 +2920,37 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3C6204A64789F99C70AF60D2704F652F"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_3C6204A64789F99C70AF60D2704F652F"
+                    {
+                    "Name" = "8:Newtonsoft.Json.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Newtonsoft.Json.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_E984FD81EF864BFA88D51D3CAA63F3DB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3E7CA903F799937183C3E9FD3664293F"
             {
             "AssemblyRegister" = "3:1"
@@ -3160,37 +3199,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_52925EF11947FE89DB120273B3E4D42A"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Hex2bit.AspNetCore.EncryptedConfig, Version=0.9.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_52925EF11947FE89DB120273B3E4D42A"
-                    {
-                    "Name" = "8:Hex2bit.AspNetCore.EncryptedConfig.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Hex2bit.AspNetCore.EncryptedConfig.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_E984FD81EF864BFA88D51D3CAA63F3DB"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_5560A88E6C0FF68F8A430401558796B3"
             {
             "AssemblyRegister" = "3:1"
@@ -3255,7 +3263,7 @@
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_568F836A414943B190E8BD71AD050CEA"
             {
-            "SourcePath" = "8:..\\Hex2bit.AspNetCore.EncryptedConfig.Editor\\ejson.ico"
+            "SourcePath" = "8:..\\Hex2bit.NetCore.EncryptedConfig.Editor\\ejson.ico"
             "TargetName" = "8:ejson.ico"
             "Tag" = "8:"
             "Folder" = "8:_E984FD81EF864BFA88D51D3CAA63F3DB"
@@ -3893,37 +3901,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_92E50A42DA2D07B7D39396B97C86C164"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_92E50A42DA2D07B7D39396B97C86C164"
-                    {
-                    "Name" = "8:Newtonsoft.Json.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Newtonsoft.Json.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_E984FD81EF864BFA88D51D3CAA63F3DB"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_93CCDF0B317D1E312E5C6674FC3B32F2"
             {
             "AssemblyRegister" = "3:1"
@@ -4248,6 +4225,37 @@
                     }
                 }
             "SourcePath" = "8:System.Text.RegularExpressions.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_E984FD81EF864BFA88D51D3CAA63F3DB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_AE7C763AAC0C75E95D5FC37F91D68AB0"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Hex2bit.NetCore.EncryptedConfig, Version=0.9.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_AE7C763AAC0C75E95D5FC37F91D68AB0"
+                    {
+                    "Name" = "8:Hex2bit.NetCore.EncryptedConfig.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Hex2bit.NetCore.EncryptedConfig.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_E984FD81EF864BFA88D51D3CAA63F3DB"
@@ -4823,37 +4831,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_D772D39792EB34259A16A9191D491C7F"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:ICSharpCode.AvalonEdit, Version=5.0.3.0, Culture=neutral, PublicKeyToken=9cc39be672370310, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_D772D39792EB34259A16A9191D491C7F"
-                    {
-                    "Name" = "8:ICSharpCode.AvalonEdit.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:ICSharpCode.AvalonEdit.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_E984FD81EF864BFA88D51D3CAA63F3DB"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_D89A1177D86CB3A83A8FB0B3B3C3D679"
             {
             "AssemblyRegister" = "3:1"
@@ -4899,6 +4876,37 @@
                     }
                 }
             "SourcePath" = "8:System.Threading.Overlapped.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_E984FD81EF864BFA88D51D3CAA63F3DB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_DD5B9EF2B87A9B9226D7B8FCE64893C8"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:ICSharpCode.AvalonEdit, Version=5.0.3.0, Culture=neutral, PublicKeyToken=9cc39be672370310, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_DD5B9EF2B87A9B9226D7B8FCE64893C8"
+                    {
+                    "Name" = "8:ICSharpCode.AvalonEdit.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:ICSharpCode.AvalonEdit.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_E984FD81EF864BFA88D51D3CAA63F3DB"
@@ -5495,7 +5503,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:.NET Encrypted Config Editor"
         "ProductCode" = "8:{E302E6CD-B8C7-4E4D-A092-31D51D2CF87D}"
-        "PackageCode" = "8:{79A54085-D3E5-4ADC-96C1-CE3256C2E097}"
+        "PackageCode" = "8:{21DCA8BB-ABFA-49DC-8343-BDBCB6BCCFC6}"
         "UpgradeCode" = "8:{A2845F65-1CE2-451F-A9FD-7AA8C20A7578}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -5505,13 +5513,13 @@
         "ProductVersion" = "8:0.9.0"
         "Manufacturer" = "8:Hex2Bit"
         "ARPHELPTELEPHONE" = "8:"
-        "ARPHELPLINK" = "8:https://github.com/hex2bit/AspNetCore.EncryptedConfig"
+        "ARPHELPLINK" = "8:https://github.com/hex2bit/NetCore.EncryptedConfig"
         "Title" = "8:.NET Encrypted Config Editor Setup"
         "Subject" = "8:"
         "ARPCONTACT" = "8:Hex2Bit"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
-        "ARPURLINFOABOUT" = "8:https://github.com/hex2bit/AspNetCore.EncryptedConfig"
+        "ARPURLINFOABOUT" = "8:https://github.com/hex2bit/netcoreEncryptedConfig"
         "ARPPRODUCTICON" = "8:_568F836A414943B190E8BD71AD050CEA"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
@@ -6030,7 +6038,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_09B759EED5B047AE9D8D5DDB6D3A9EEF"
             {
-            "SourcePath" = "8:..\\Hex2bit.AspNetCore.EncryptedConfig.Editor\\obj\\Release\\EncryptedConfigEditor.exe"
+            "SourcePath" = "8:..\\Hex2bit.NetCore.EncryptedConfig.Editor\\obj\\Debug\\EncryptedConfigEditor.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_E984FD81EF864BFA88D51D3CAA63F3DB"

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hex2bit.AspNetCore.EncryptedConfig.Editor
+namespace Hex2bit.NetCore.EncryptedConfig.Editor
 {
     public class EncryptedFileDetails : IEquatable<object>
     {

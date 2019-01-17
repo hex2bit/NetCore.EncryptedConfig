@@ -6,7 +6,7 @@ using System.IO;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
-namespace Hex2bit.AspNetCore.EncryptedConfig
+namespace Hex2bit.NetCore.EncryptedConfig
 {
     /// <summary>
     /// Helper extension method to add the encrypted JSON configuration file into the .NET Core ConfigurationBuilder pipeline.  This

@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{CCFBE2DA-A41A-4296-A18A-AE8427C6F380}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Hex2bit.AspNetCore.EncryptedConfig.Editor</RootNamespace>
+    <RootNamespace>Hex2bit.NetCore.EncryptedConfig.Editor</RootNamespace>
     <AssemblyName>EncryptedConfigEditor</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -24,8 +24,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>false</MapFileExtensions>
-    <SupportUrl>https://github.com/hex2bit/AspNetCore.EncryptedConfig/</SupportUrl>
-    <ErrorReportUrl>https://github.com/hex2bit/AspNetCore.EncryptedConfig/</ErrorReportUrl>
+    <SupportUrl>https://github.com/hex2bit/netcoreEncryptedConfig/</SupportUrl>
+    <ErrorReportUrl>https://github.com/hex2bit/netcoreEncryptedConfig/</ErrorReportUrl>
     <ProductName>.NET Encrypted Config Editor</ProductName>
     <PublisherName>Hex2Bit</PublisherName>
     <ApplicationRevision>0</ApplicationRevision>
@@ -62,7 +62,7 @@
     <ManifestCertificateThumbprint>5356F25CD6704D83507C458F37BE137D8218EC81</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>Hex2bit.AspNetCore.EncryptedConfig.Editor_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>Hex2bit.NetCore.EncryptedConfig.Editor_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -143,9 +143,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Hex2bit.AspNetCore.EncryptedConfig\Hex2bit.AspNetCore.EncryptedConfig.csproj">
+    <ProjectReference Include="..\Hex2bit.NetCore.EncryptedConfig\Hex2bit.NetCore.EncryptedConfig.csproj">
       <Project>{2b04798c-1499-458d-8923-9c537f2092bb}</Project>
-      <Name>Hex2bit.AspNetCore.EncryptedConfig</Name>
+      <Name>Hex2bit.NetCore.EncryptedConfig</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -18,7 +18,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Xml.Linq;
 
-namespace Hex2bit.AspNetCore.EncryptedConfig.Editor
+namespace Hex2bit.NetCore.EncryptedConfig.Editor
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

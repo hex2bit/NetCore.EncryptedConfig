@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Hex2bit.AspNetCore.EncryptedConfig {
+namespace Hex2bit.NetCore.EncryptedConfig {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Hex2bit.AspNetCore.EncryptedConfig {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Hex2bit.AspNetCore.EncryptedConfig.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Hex2bit.NetCore.EncryptedConfig.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

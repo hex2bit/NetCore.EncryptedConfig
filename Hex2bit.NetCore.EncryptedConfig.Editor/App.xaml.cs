@@ -8,7 +8,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Hex2bit.AspNetCore.EncryptedConfig.Editor
+namespace Hex2bit.NetCore.EncryptedConfig.Editor
 {
     /// <summary>
     /// Interaction logic for App.xaml

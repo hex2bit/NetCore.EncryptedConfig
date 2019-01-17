@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hex2bit.AspNetCore.EncryptedConfig.Editor", "Hex2bit.AspNetCore.EncryptedConfig.Editor\Hex2bit.AspNetCore.EncryptedConfig.Editor.csproj", "{CCFBE2DA-A41A-4296-A18A-AE8427C6F380}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hex2bit.NetCore.EncryptedConfig.Editor", "Hex2bit.NetCore.EncryptedConfig.Editor\Hex2bit.NetCore.EncryptedConfig.Editor.csproj", "{CCFBE2DA-A41A-4296-A18A-AE8427C6F380}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hex2bit.AspNetCore.EncryptedConfig", "Hex2bit.AspNetCore.EncryptedConfig\Hex2bit.AspNetCore.EncryptedConfig.csproj", "{2FD48165-4F2E-41C5-9E64-CE9649185A31}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hex2bit.NetCore.EncryptedConfig", "Hex2bit.NetCore.EncryptedConfig\Hex2bit.NetCore.EncryptedConfig.csproj", "{2FD48165-4F2E-41C5-9E64-CE9649185A31}"
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{B26C50F9-9B01-47DF-BB08-7F3186F170D3}"
 EndProject

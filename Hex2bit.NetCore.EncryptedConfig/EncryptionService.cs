@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
-namespace Hex2bit.AspNetCore.EncryptedConfig
+namespace Hex2bit.NetCore.EncryptedConfig
 {
     public class EncryptionService : IDisposable
     {

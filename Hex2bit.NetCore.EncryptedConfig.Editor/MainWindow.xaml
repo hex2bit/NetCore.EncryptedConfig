@@ -3,8 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Hex2bit.AspNetCore.EncryptedConfig.Editor"
-        xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="Hex2bit.AspNetCore.EncryptedConfig.Editor.MainWindow"
+        xmlns:local="clr-namespace:Hex2bit.NetCore.EncryptedConfig.Editor"
+        xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="Hex2bit.NetCore.EncryptedConfig.Editor.MainWindow"
         mc:Ignorable="d"
         Title="Hex2Bit - .NET Encrypted Config Editor (v0.9)" Height="700" Width="1000" Initialized="Window_Initialized" Closing="Window_Closing">
     <Window.Resources>

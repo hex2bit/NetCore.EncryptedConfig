@@ -6,7 +6,7 @@ using System.IO;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
-namespace Hex2bit.AspNetCore.EncryptedConfig
+namespace Hex2bit.NetCore.EncryptedConfig
 {
     /// <summary>
     /// Configuration provider for the encrypted JSON files

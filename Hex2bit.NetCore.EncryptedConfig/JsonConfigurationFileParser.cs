@@ -8,7 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace Hex2bit.AspNetCore.EncryptedConfig
+namespace Hex2bit.NetCore.EncryptedConfig
 {
     /// <summary>
     /// Copied from Microsoft's code since they scope it as an internal class so it can't be used from the Nuget package

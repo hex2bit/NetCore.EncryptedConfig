@@ -7,8 +7,8 @@
     <Company>Hex2Bit</Company>
     <Description>Provides certificate based encryption services, along with helper classes to use cert-encrypted JSON files into .NET Core's ConfigurationBuilder.  Encrypted JSON configuration files can be created and editing using the .NET Encrypted Config Editor release on the GitHub project site.  See the project site for more information and usage examples.</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageProjectUrl>https://github.com/hex2bit/AspNetCore.EncryptedConfig</PackageProjectUrl>
-    <PackageIconUrl>https://raw.githubusercontent.com/hex2bit/AspNetCore.EncryptedConfig/master/Hex2bit.AspNetCore.EncryptedConfig.Editor/ejson.ico</PackageIconUrl>
+    <PackageProjectUrl>https://github.com/hex2bit/netcoreEncryptedConfig</PackageProjectUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/hex2bit/netcoreEncryptedConfig/master/Hex2bit.NetCore.EncryptedConfig.Editor/ejson.ico</PackageIconUrl>
     <AssemblyVersion>0.9.0.0</AssemblyVersion>
     <FileVersion>0.9.0.0</FileVersion>
     <PackageLicenseUrl>https://licenses.nuget.org/MIT</PackageLicenseUrl>

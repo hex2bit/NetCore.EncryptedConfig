@@ -8,7 +8,7 @@ using System.Windows.Data;
 /// MathConverter pulled from here:
 /// https://rachel53461.wordpress.com/2011/08/20/the-math-converter/
 /// </summary>
-namespace Hex2bit.AspNetCore.EncryptedConfig.Editor
+namespace Hex2bit.NetCore.EncryptedConfig.Editor
 {
     // Does a math equation on the bound value.
     // Use @VALUE in your mathEquation as a substitute for bound value

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Hex2bit.AspNetCore.EncryptedConfig.Editor.Properties
+namespace Hex2bit.NetCore.EncryptedConfig.Editor.Properties
 {
 
 
@@ -44,7 +44,7 @@ namespace Hex2bit.AspNetCore.EncryptedConfig.Editor.Properties
             {
                 if ((resourceMan == null))
                 {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Hex2bit.AspNetCore.EncryptedConfig.Editor.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Hex2bit.NetCore.EncryptedConfig.Editor.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
