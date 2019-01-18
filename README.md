@@ -5,7 +5,7 @@ I wrote this library because ASP.NET Core doesn't have a good option for protect
 
 # How to use this library
 You can add the Nuget package to your project, named **Hex2bit.AspNetCore.EncryptedConfig** (currently pre-release), which can also be found here:
-https://www.nuget.org/packages/Hex2bit.AspNetCore.EncryptedConfig/
+https://www.nuget.org/packages/Hex2bit.NetCore.EncryptedConfig/
 
 In your application, you'd specify an encrypted config file to load through the ConfigurationBuilder using the new **AddEncryptedConfigFile** method.
 ```csharp
