@@ -53,7 +53,7 @@ namespace Hex2bit.NetCore.EncryptedConfig
             }
             
             // use JSON file parser (copied from Microsoft's code) to parse the JSON config file into a dictionary
-            Data = JsonConfigurationFileParser.Parse(stream);
+            Data = JsonConfigurationFileParser.Parse(new MemoryStream(Encoding.UTF8.GetBytes(decryptedString)));
         }
     }
 }
