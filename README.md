@@ -35,7 +35,7 @@ ConfigFileName = "falback_settings.ejson" // fallback config file to load
 
 # Desktop Config File Editor
 Under the **Releases** of this GitHub project you will find the latest installer for the desktop editor.
-https://github.com/hex2bit/AspNetCore.EncryptedConfig/releases
+https://github.com/hex2bit/NetCore.EncryptedConfig/releases
 
 The editor is pretty basic but allows you to edit files that get saved using AES 256 encryption, utilizing certificates installed on your machine.  Files with the extensions of **.ejson** and **.ejs** are mapped to the program, so it is recommended to save your files with one of those two extensions.  You can even edit those files in Visual Studio just by double clicking on them.
 
